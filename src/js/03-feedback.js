@@ -8,7 +8,8 @@ const object = {};
 
 const inputValues = localStorage.getItem('feedback-form-state');
 const parsedInputValues = JSON.parse(inputValues);
-if (parsedInputValues) {
+if (inputValues) {
+  parsedInputValues = JSON.parse(inputValues);
   email.value = parsedInputValues.email;
   message.value = parsedInputValues.message;
 }
