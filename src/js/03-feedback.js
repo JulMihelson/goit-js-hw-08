@@ -6,6 +6,13 @@ const message = document.querySelector('.feedback-form textarea');
 
 const object = {};
 
+const inputValues = localStorage.getItem('feedback-form-state');
+const parsedInputValues = JSON.parse(inputValues);
+if (parsedInputValues) {
+  email.value = parsedInputValues.email;
+  message.value = parsedInputValues.message;
+}
+
 form.addEventListener(
   'input',
   throttle(event => {
