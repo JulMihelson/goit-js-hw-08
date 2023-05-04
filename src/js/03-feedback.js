@@ -12,7 +12,6 @@ if (inputValues) {
   object = { ...parsedInputValues };
   email.value = parsedInputValues.email;
   message.value = parsedInputValues.message;
-  console.log(object);
 }
 
 form.addEventListener(
