@@ -4,13 +4,15 @@ const form = document.querySelector('.feedback-form');
 const email = document.querySelector('.feedback-form input');
 const message = document.querySelector('.feedback-form textarea');
 
-const object = {};
+let object = {};
 
 let inputValues = localStorage.getItem('feedback-form-state');
 if (inputValues) {
   let parsedInputValues = JSON.parse(inputValues);
+  object = { ...parsedInputValues };
   email.value = parsedInputValues.email;
   message.value = parsedInputValues.message;
+  console.log(object);
 }
 
 form.addEventListener(
